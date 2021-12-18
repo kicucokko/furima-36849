@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="fsvMsxKgi-oDXkVaw4OT" name="ページ1">
-        <mxGraphModel dx="1275" dy="1074" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1834" dy="1074" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -193,7 +193,7 @@
                 <mxCell id="104" value="prefecture_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="1" vertex="1">
                     <mxGeometry x="160" y="640" width="120" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="128" value="has_many :comments&lt;br&gt;has_many :items&lt;br&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255) ; background-color: rgb(51 , 51 , 51)&quot;&gt;has_many :purchase&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="128" value="has_many :comments&lt;br&gt;has_many :items&lt;br&gt;&lt;span style=&quot;color: rgb(255 , 255 , 255) ; background-color: rgb(51 , 51 , 51)&quot;&gt;has_many :purchases&lt;/span&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1380" y="650" width="190" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="129" value="belongs_to :user&lt;br&gt;belongs_to :item" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -213,9 +213,6 @@
                 </mxCell>
                 <mxCell id="135" value="item_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="1" vertex="1">
                     <mxGeometry x="1270" y="260" width="150" height="30" as="geometry"/>
-                </mxCell>
-                <mxCell id="136" value="item_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="1" vertex="1">
-                    <mxGeometry x="160" y="760" width="150" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="137" value="quality" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" parent="1" vertex="1">
                     <mxGeometry x="660" y="455" width="70" height="30" as="geometry"/>
@@ -318,12 +315,6 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="199" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;startSize=25;endSize=25;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="77">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="520" y="585" as="sourcePoint"/>
-                        <mxPoint x="620" y="485" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="203" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;startSize=20;endSize=20;exitX=0.287;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="67" target="213">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="770" y="330" as="sourcePoint"/>
@@ -368,7 +359,7 @@
                     <mxGeometry y="86" width="220" height="100" as="geometry"/>
                 </mxCell>
                 <mxCell id="216" value="purchase_id" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="1">
-                    <mxGeometry x="160" y="790" width="150" height="30" as="geometry"/>
+                    <mxGeometry x="160" y="760" width="150" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="217" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;startSize=25;endSize=25;" edge="1" parent="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">

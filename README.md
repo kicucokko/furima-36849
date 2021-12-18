@@ -14,7 +14,7 @@
 
 - has_many :items
 - has_many :comments
-- has_many :purchase
+- has_many :purchases
 
 ## Items (商品情報)テーブル
 | column              | Type      | Options                       |
@@ -70,11 +70,8 @@
 | block               | string    | null: false                  |
 | build               | string    |                              |
 | phone               | string    | null: false                  |
-| item                | references| null: false,foreign_key: true|
 | purchase            | references| null: false,foreign_key: true|
 
-
-- belongs_to :item
 - belongs_to :purchase
 
 
