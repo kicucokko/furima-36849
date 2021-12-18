@@ -1,5 +1,5 @@
 
-## Users テーブル
+## Users (ユーザー管理)テーブル
 
 | column              | Type      | Options                 |
 | -----------------   | --------- | ----------------------- |
@@ -14,10 +14,9 @@
 
 - has_many :items
 - has_many :comments
-- has_many :order
-- has_one :item_order
+- has_one :purchase
 
-## Items　テーブル
+## Items (商品情報)テーブル
 | column              | Type      | Options                       |
 |   ----------------- | --------- | ----------------------------- |
 | item_name           | string    | null: false                   |
@@ -25,55 +24,55 @@
 | category_id         | integer   | null: false                   |
 | quality_id          | integer   | null: false                   |
 | fee_id              | integer   | null: false                   |
-| ken_id              | integer   | null: false                   |
+| prefecture_id       | integer   | null: false                   |
 | before_shipping_id  | integer   | null: false                   |
 | price               | integer   | null: false                   |
 | user                | references| null: false,foreign_key: true |
 
 - belongs_to :user
 - has_many :comments
-- has_one :order
-- has_one :item_order
+- has_one :purchase
+- has_one :receiver
+
+*Action Hash*
 - belongs_to_active_hash :category
 - belongs_to_active_hash :quality
 - belongs_to_active_hash :fee
-- belongs_to_active_hash :ken
+- belongs_to_active_hash :prefecture
 - belongs_to_active_hash :before_shipping
 
-## Comments テーブル
+## Comments (コメント)テーブル
 | column            | Type      | Options                      |
 | ----------------- | --------- | ---------------------------- |
 | content           | text      | null: false                  |
-| items             | references| null: false,foreign_key: true|
+| item              | references| null: false,foreign_key: true|
 | user              | references| null: false,foreign_key: true|
 
 - belongs_to :user
 - belongs_to :item
 
-## item_orders テーブル
+## Purchase (購入情報管理)テーブル
 | column            | Type      | Options                      |
 | ----------------- | --------- | ---------------------------- |
-| user              | integer   | null: false,foreign_key: true|
-| item              | integer   | null: false,foreign_key: true|
-| order             | integer   | null: false,foreign_key: true|
+| user              | references| null: false,foreign_key: true|
+| item              | references| null: false,foreign_key: true|
 
-- belongs_to :user
-- belongs_to :item
-- belongs_to :order
+- belong_to :user
+- belong_to :item
 
-## Orders テーブル
+
+## Receivers (配送先)テーブル
 | column              | Type      | Options                      |
 | ------------------- | --------- | ---------------------------- |
 | zip                 | integer   | null: false                  |
-| ken_id              | integer   | null: false                  |
+| prefecture_id       | integer   | null: false                  |
 | city                | string    | null: false                  |
 | block               | string    | null: false                  |
 | build               | string    |                              |
 | phone               | integer   | null: false                  |
-| user                | references| null: false,foreign_key: true|
 | item                | references| null: false,foreign_key: true|
 
-- belongs_to :user
 - belongs_to :item
-- has_one :item_order
-- belongs_to_active_hash :ken
+
+*Action Hash*
+- belongs_to_active_hash :prefecture
