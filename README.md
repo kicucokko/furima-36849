@@ -14,7 +14,7 @@
 
 - has_many :items
 - has_many :comments
-- has_one :purchase
+- has_many :purchase
 
 ## Items (商品情報)テーブル
 | column              | Type      | Options                       |
@@ -32,7 +32,6 @@
 - belongs_to :user
 - has_many :comments
 - has_one :purchase
-- has_one :receiver
 
 *Action Hash*
 - belongs_to_active_hash :category
@@ -51,28 +50,33 @@
 - belongs_to :user
 - belongs_to :item
 
-## Purchase (購入情報管理)テーブル
+## Purchases (購入情報管理)テーブル
 | column            | Type      | Options                      |
 | ----------------- | --------- | ---------------------------- |
 | user              | references| null: false,foreign_key: true|
 | item              | references| null: false,foreign_key: true|
 
-- belong_to :user
-- belong_to :item
+- belongs_to :user
+- belongs_to :item
+- has_one :receiver
 
 
 ## Receivers (配送先)テーブル
 | column              | Type      | Options                      |
 | ------------------- | --------- | ---------------------------- |
-| zip                 | integer   | null: false                  |
+| zip                 | string    | null: false                  |
 | prefecture_id       | integer   | null: false                  |
 | city                | string    | null: false                  |
 | block               | string    | null: false                  |
 | build               | string    |                              |
-| phone               | integer   | null: false                  |
+| phone               | string    | null: false                  |
 | item                | references| null: false,foreign_key: true|
+| purchase            | references| null: false,foreign_key: true|
+
 
 - belongs_to :item
+- belongs_to :purchase
+
 
 *Action Hash*
 - belongs_to_active_hash :prefecture
