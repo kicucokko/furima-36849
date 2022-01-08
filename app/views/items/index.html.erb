@@ -127,8 +127,7 @@
       新規投稿商品
     </div>
     <ul class='item-lists'>
-       <% if @items.ids == "" %>
-        <% @items.each do |item|%>
+      <% @items.each do |item|%>
         <li class='list'>
           <%= link_to "#" do %>
           <div class='item-img-content'>
@@ -154,9 +153,8 @@
             </div>
           </div>
           <% end %>
-         </li>
-         <% end %>
-        <% end %>
+        </li>
+      <% end %>
       <% if @items.empty? %>
         <li class='list'>
           <%= link_to '#' do %>
