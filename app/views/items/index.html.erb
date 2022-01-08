@@ -127,8 +127,7 @@
       新規投稿商品
     </div>
     <ul class='item-lists'>
-
-      <% if @items.ids != 0 %>
+       <% if @items.ids == "" %>
         <% @items.each do |item|%>
         <li class='list'>
           <%= link_to items_path(item.id) do %>
@@ -155,9 +154,10 @@
             </div>
           </div>
           <% end %>
-        </li>
+         </li>
+         <% end %>
         <% end %>
-      <% else %>
+      <% if @items.empty? %>
         <li class='list'>
           <%= link_to '#' do %>
           <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
