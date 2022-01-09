@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!,except: [:index,:show]
   before_action :move_to_sign_in, except: [:index, :show]
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, onry: [:show,:edit]
+  before_action :set_item, only: [:show,:edit]
 
   def index
     @items = Item.all.order("items.created_at DESC")
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 
   def edit
   end
-  
+
   def update
     item = Item.find(params[:id])
     if item.update(item_params)
@@ -56,5 +56,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
