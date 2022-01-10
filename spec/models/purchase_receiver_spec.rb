@@ -16,6 +16,14 @@ RSpec.describe PurchaseReceiver, type: :model do
       @purchase_receiver.build = ''
       expect(@purchase_receiver).to be_valid
     end
+    it 'phoneは10桁で保存できる' do
+      @purchase_receiver.build = '0351234567'
+      expect(@purchase_receiver).to be_valid
+    end
+    it 'phoneは11桁で保存できる' do
+      @purchase_receiver.phone = '09012345678'
+      expect(@purchase_receiver).to be_valid
+    end
   end
 
   context '内容に問題がある場合' do
@@ -76,6 +84,11 @@ RSpec.describe PurchaseReceiver, type: :model do
     end
     it 'phoneに””-(ハイフン)が入っていると商品購入できない' do
       @purchase_receiver.phone = "090-123-456"
+      @purchase_receiver.valid?
+      expect(@purchase_receiver.errors.full_messages).to include("Phone is invalid. Input only number")
+    end
+    it 'phoneが9桁では商品購入できない' do
+      @purchase_receiver.phone = "090123456"
       @purchase_receiver.valid?
       expect(@purchase_receiver.errors.full_messages).to include("Phone is invalid. Input only number")
     end

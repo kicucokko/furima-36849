@@ -10,7 +10,7 @@ class PurchaseReceiver
     validates :prefecture_id, numericality: {other_than: 1}
     validates :city
     validates :block
-    validates :phone,format: { with: /\A[0-9]{11}\z/ ,message: "is invalid. Input only number"}
+    validates :phone,format: { with: /\A[0-9]{10,11}\z/ ,message: "is invalid. Input only number"}
   end
 
   def save
