@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @purchase = Purchase.find{params[:id]}
   end
 
   def edit
